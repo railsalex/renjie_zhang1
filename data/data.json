@@ -1,0 +1,14 @@
+{
+  "id": 1,
+  "date": "13/02/2015",
+  "img": "/uploads/pic1.png",
+  "title": "Outfit of the day <3",
+  "comments": [
+    {
+      "username": "Ya Ju",
+      "comment": "Looks so good", 
+      "date": "14/02/2015"
+    } 
+  ],
+  "tags": ["Asos Jeans", "Topman Sweater", "Converse Shoes"]
+}
