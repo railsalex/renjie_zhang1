@@ -1,0 +1,14 @@
+<img ng-src="{{item.img}}">
+
+ <div ng-repeat="comment in item.comments">
+    {{comment.comment}} by {{comment.useremail}}
+     <a ng-click="deleteComment(comment)">Delete</a>
+  </div>
+
+  <form ng-submit="addComment()" style="margin-top:30px;">
+    <h3>Add a new comment</h3>
+    <div class="form-group">
+      <input type="text" class="form-control" placeholder="Comment" ng-model="comment.comment"></input>
+    </div>
+  <button type="submit" class="btn btn-primary">Save</button>
+  </form>

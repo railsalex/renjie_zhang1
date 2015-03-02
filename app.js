@@ -7,15 +7,30 @@ app.config(['$routeProvider', function($routeProvider) {
       public: true,
       templateUrl: 'partials/clothes/index.html'
     })
+    .when('/clothes/:id', {
+      controller: 'ClothesDetailController',
+      public: true,
+      templateUrl: 'partials/clothes/single.html'
+    })
+    .when('/clothes/', {
+      controller: 'ClothesClothesController',
+      public: true,
+      templateUrl: 'partials/clothes/clothes.html'
+    })
+    .when('/hats/', {
+      controller: 'ClothesClothesController',
+      public: true,
+      templateUrl: 'partials/clothes/hat.html'
+    })
     .when('/login',{
     	templateUrl: 'partials/users/login.html', 
     	login: true,
-        controller:'UsersController'
+      controller:'UsersController'
     })
     .when('/signup',{
     	templateUrl: 'partials/users/signup.html', 
     	public: true,
-        controller:'UsersController'
+      controller:'UsersController'
     })				
     .otherwise({
       redirectTo: '/'

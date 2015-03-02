@@ -1,1 +1,37 @@
-<p>here</p>
+<div>
+  <p>Search: <input ng-model="query" style = "color: black;"></p>
+</div>
+
+<br>
+
+Sort by:
+  <select ng-model="orderProp" style="color:black">
+    <option value="title">Alphabetical</option>
+    <option value="date">Newest</option>
+    <option value="type">Type</option>
+  </select>
+
+<br><br>
+
+<div class="row">
+	<div class="col-md-4" ng-repeat="item in clothes | filter:{title: query } | orderBy:orderProp"  style = "margin-bottom: 35px;">
+		<a href="/#/clothes/{{item.id}}"><img ng-src="{{item.img}}" alt=""></a>
+		<p><a href="/#/clothes/{{item.id}}">{{item.title}}</a></p>
+	    <a ng-click="deleteClothes(item)">Delete</a>
+
+	</div>
+</div>
+
+<form id ="addClothes" ng-show="user.authenticated" ng-submit="addClothes()" style="margin-top:30px;">
+	<h3>Add new clothes</h3>
+	<div class="form-group">
+	  <input type="text" class="form-control" placeholder="Clothes" ng-model="clothes.title"></input>
+	</div>
+	<div class="form-group">
+	  <input type="text" class="form-control" placeholder="Image URL" ng-model="clothes.img"></input>
+	</div>
+	<div class="form-group">
+	  <input type="text" class="form-control" placeholder="Type" ng-model="clothes.type"></input>
+	</div>
+	<button type="submit" class="btn btn-primary">Save</button>
+</form>
